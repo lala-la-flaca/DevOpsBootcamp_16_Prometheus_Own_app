@@ -3,35 +3,36 @@
 This exercise is part of Module 16 from the TWN DevOps Bootcamp. In Module 16, we learn how to monitor applications and infrastructure with Prometheus. This module covers everything from installing the Prometheus and Grafana stack on Kubernetes to setting up alerting and visual dashboards. We also learn how to monitor third-party apps such as Redis and collect custom metrics from your own applications. By the end of this module, you know how to build a complete monitoring solution that detects issues early, sends alerts, and visualizes performance data in real time.
 
 ---
-<a id="demo2"></a>
-# 🚨 Demo 3 –  Configure Monitoring for 3rd Party App
+<a id="demo4"></a>
+# 🚨 Demo 4 –  Configure Monitoring for Own Application
 # 📌 Objective
-Monitor a Redis service running in Kubernetes using Prometheus and Grafana dashboards.
+Integrate custom application-level metrics into Prometheus and visualize them in Grafana dashboards.
 
 # 🚀 Technologies Used
 * Prometheus: Metrics collection and monitoring system.
 * Grafana: Visualization and dashbaord tool.
 * Linux: OS.
 * Kubernetes: Container Orchestration platform.
-* Helm: Package Manager for Kuebrnetes.
+* Helm: Package Manager for Kubernetes.
 * AWS EKS: Managed Kubernetes Cluster.
 * Terraform: To deploy K8 infrastructure.
-* Redis: Target application for monitoring.
+* NodeJS: Application exposing metrics.
 
 # 🎯 Features
-  ✅ Deploy Redis and Redis Exporter via Helm Chart.<br>
-  📁 Add a Redis dashboard to Grafana.<br>
-  ⚙️ Sets up rules for redis downtime or high connections.<br>
+  ✅ Exposes /metrics endpoint via Prometheus client library.<br>
+  📈 Deploy the NodeJS application, which has a metrics endpoint configured, into Kubernetes cluster.<br>
+  📊 Configure Prometheus to scrape this exposed metrics and visualize it in Grafana Dashboard.<br>
   
 # Prerequisites
-* AWS account with valid keys.
+* Prometheus stack installed
 * EKS demo from terraform module.
-* Microoservices Demo from kubernetes module.
-* Prometheus Demo1.
+
   
 # 🏗 Project Architecture
 <img src=""/>
 
 # ⚙️ Project Configuration
-## Redis Pod
+## Exposing Metrics NodeJS
+1. Ensure that the application is exposing the prometheus metrics.
+2. 
 
