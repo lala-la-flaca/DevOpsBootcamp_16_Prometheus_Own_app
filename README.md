@@ -29,7 +29,6 @@ Integrate custom application-level metrics into Prometheus and visualize them in
 
   
 # 🏗 Project Architecture
-<img src=""/>
 
 # ⚙️ Project Configuration
 ## Exposing Metrics NodeJS
@@ -64,7 +63,46 @@ Integrate custom application-level metrics into Prometheus and visualize them in
 ## Create Kubernetes YAML Files
 7. Create a Deployment manifest for the Node.js application.
    ```bash
-   
+   ---
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: nodeapp
+        labels:
+          app: nodeapp
+      spec:
+        selector:
+          matchLabels:
+            app: nodeapp
+        template:
+          metadata:
+            labels:
+              app: nodeapp
+          spec:
+            imagePullSecrets:
+            - name: my-registry-key
+            containers:
+            - name: nodeapp
+              image: lala011/demo-app:nodeapp
+              ports:
+              - containerPort: 3000
+              imagePullPolicy: Always
+    ---
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: nodeapp
+      labels:
+        app: nodeapp
+    spec:
+      type: ClusterIP
+      selector:
+        app: nodeapp
+      ports:
+      - name: service
+        protocol: TCP
+        port: 3000
+        targetPort: 3000
    ```
    <img src ="https://github.com/lala-la-flaca/DevOpsBootcamp_16_Prometheus_Own_app/blob/main/Img/5%20create%20deployment%20file.PNG" width=800/>
    
@@ -90,6 +128,25 @@ Integrate custom application-level metrics into Prometheus and visualize them in
     
 14. Add a ServiceMonitor resource to enable Prometheus to scrape metrics.
     ```bash
+    ---
+    apiVersion: monitoring.coreos.com/v1
+    kind: ServiceMonitor
+    metadata:
+      name: monitoring-node-app
+      labels:
+        release: monitoring
+        app: nodeapp
+    spec:
+      endpoints:
+      - path: /metrics
+        port: service
+        targetPort: 3000
+      namespaceSelector:
+        matchNames:
+        - default
+      selector:
+        matchLabels:
+          app: nodeapp
     ```
     <img src ="https://github.com/lala-la-flaca/DevOpsBootcamp_16_Prometheus_Own_app/blob/main/Img/11%20add%20servicemonitor%20component.PNG" width=800/>
 
