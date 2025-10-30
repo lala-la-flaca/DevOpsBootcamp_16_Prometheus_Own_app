@@ -116,7 +116,7 @@ Integrate custom application-level metrics into Prometheus and visualize them in
    
 10. Apply the Deployment manifest.
     ```bash
-    kubectl apply -f node-js-deployment.yaml
+    kubectl apply -f k8-config.yaml
     ```
     <img src ="https://github.com/lala-la-flaca/DevOpsBootcamp_16_Prometheus_Own_app/blob/main/Img/7%20apply%20deploymet%20file.PNG" width=800/>
     
