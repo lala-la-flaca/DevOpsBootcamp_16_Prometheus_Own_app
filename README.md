@@ -33,10 +33,10 @@ Integrate custom application-level metrics into Prometheus and visualize them in
 # ⚙️ Project Configuration
 ## Exposing Metrics NodeJS
 1. Verify that the application exposes Prometheus metrics.
-   <details><summary><strong>Prometheus Client - Node JS:</strong></summary>
-     Ensure the `prom-client` package is installed and properly configured in your Node.js application.<br>
-  </details>
-    <img src ="https://github.com/lala-la-flaca/DevOpsBootcamp_16_Prometheus_Own_app/blob/main/Img/0%20nodejs%20metric%20code.PNG" width=800/>
+     <details><summary><strong>Prometheus Client - Node JS:</strong></summary>
+       Ensure the `prom-client` package is installed and properly configured in your Node.js application.<br>
+    </details>
+   <img src ="https://github.com/lala-la-flaca/DevOpsBootcamp_16_Prometheus_Own_app/blob/main/Img/0%20nodejs%20metric%20code.PNG" width=800/>
     
 2. Build the Docker image for the Node.js application.
 
