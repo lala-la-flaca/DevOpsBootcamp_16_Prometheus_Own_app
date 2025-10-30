@@ -167,7 +167,10 @@ Integrate custom application-level metrics into Prometheus and visualize them in
     <img src ="https://github.com/lala-la-flaca/DevOpsBootcamp_16_Prometheus_Own_app/blob/main/Img/15%20query.PNG" width=800/>
     
 20. Create a Grafana dashboard using the same query for total of request and duration.
+    Total Requests:
     <img src ="https://github.com/lala-la-flaca/DevOpsBootcamp_16_Prometheus_Own_app/blob/main/Img/16%20grafana%20dashbaord.png" width=800/>
+    Duration:
+    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_16_Prometheus_Own_app/blob/main/Img/17%20ad%20a%20new%20panel%20with%20request%20duration.png" width=800/>
     
 22. Verify that the dashboard visualizes the Node.js application metrics correctly.
     <img src ="https://github.com/lala-la-flaca/DevOpsBootcamp_16_Prometheus_Own_app/blob/main/Img/18%20node%20app%20dashboards.PNG" width=800/>
